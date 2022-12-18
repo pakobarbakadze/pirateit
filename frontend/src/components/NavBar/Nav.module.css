@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+}
+
+.nav,
+.nav * {
+  background-color: var(--dark);
+}
+
+.logo h1 {
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.logo span {
+  color: #337fc1;
+}
+
+.menu h1 {
+    font-size: 22px;
+    cursor: pointer;
+}
