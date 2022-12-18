@@ -1,4 +1,4 @@
-import Game from "../models/gameModel";
+import Game from "../models/gameModel.js";
 
 // @desc Upload game
 // @route POST /api/games/upload

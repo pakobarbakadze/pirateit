@@ -1,10 +1,10 @@
 import express from "express";
 const router = express.Router();
-import { uploadGame, getGame, getAllGames } from "../controllers/gameController";
-import { protect, admin } from "../middleware/auth";
+import { uploadGame, getGame, getAllGames } from "../controllers/gameController.js";
+import { protect, admin } from "../middleware/auth.js";
 
-router.post("/upload", admin, uploadGame);
-router.get("getGame", getGame);
-router.get("getAllGames", getAllGames);
+router.post("/upload", protect, admin, uploadGame);
+router.get("/getGame", getGame);
+router.get("/getAllGames", getAllGames);
 
 export default router;

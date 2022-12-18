@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
 
-const db = () => {
+const db = async () => {
   try {
-    const con = mongoose.connect(process.env.URL, {
+    const con = await mongoose.connect(process.env.MONGO_URI, {
       dbName: "pirateit-mern",
       useUnifiedTopology: true,
       useNewUrlParser: true,
     });
+    mongoose.set("strictQuery", false);
     console.log(`MongoDB Connected ${con.connection.host}`);
   } catch (err) {
     console.error(`Error : ${err.message}`);
