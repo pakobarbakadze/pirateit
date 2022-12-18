@@ -1,0 +1,15 @@
+{
+  "name": "pirateit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "client": "yarn --cwd frontend start",
+    "server": "nodemon backend/server",
+    "dev": "concurrently \"yarn run client\" \"yarn run server\""
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  }
+}
