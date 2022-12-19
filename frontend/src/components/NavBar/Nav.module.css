@@ -17,10 +17,10 @@
 }
 
 .logo span {
-  color: #337fc1;
+  color: var(--secondary);
 }
 
 .menu h1 {
-    font-size: 22px;
-    cursor: pointer;
+  font-size: 22px;
+  cursor: pointer;
 }
