@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { userActions } from "../../redux/ConfigureStore.user.js";
 
 import SubmitBtn from "../SubmitBtn/SubmitBtn";
 
@@ -11,10 +14,11 @@ const Signin = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [signError, setSignError] = useState("");
 
+  const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
     setIsSubmit(true);
-    console.log({ username: data.username, password: data.password });
   };
 
   useEffect(() => {
@@ -22,15 +26,15 @@ const Signin = () => {
       axios
         .post("/api/users/login", { username: data.username, password: data.password })
         .then((res) => {
-          console.log(res);
+          dispatch(userActions.setState(res.data));
           setSignError("");
         })
         .catch((err) => {
-          console.log(err.response.data);
           setSignError(err.response.data);
         });
     }
     setIsSubmit(false);
+    // eslint-disable-next-line
   }, [isSubmit]);
 
   return (

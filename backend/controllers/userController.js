@@ -15,10 +15,10 @@ const authUser = async (req, res) => {
     const isPassMatch = await bcrypt.compare(password, user.password);
     if (!isPassMatch) return res.status(401).send("Invalid password");
 
-    const token = user.generateAuthToken();
+    const token = await user.generateAuthToken();
 
     const userData = { username: user.username, email: user.email, role: user.role };
-    res.send({ userData: userData, token });
+    res.send({ userData: userData, token: token });
   } catch (e) {
     res.status(400).send(e);
   }
