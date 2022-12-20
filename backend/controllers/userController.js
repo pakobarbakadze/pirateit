@@ -1,15 +1,24 @@
 import User from "../models/userModel.js";
+import bcrypt from "bcryptjs";
 
 // @desc    Auth user & get token
 // @route   POST /api/users/login
 // @access  Public
 const authUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
   try {
-    const user = await User.findByCredentials(email, password);
-    const token = await user.generateAuthToken();
-    delete user._doc.password;
-    res.send({ userData: user, token });
+    if (!username || !password) return res.status(400).send("username or password missing");
+
+    const user = await User.findOne({ username: username });
+    if (!user) return res.status(401).send("User doesnt exist");
+
+    const isPassMatch = await bcrypt.compare(password, user.password);
+    if (!isPassMatch) return res.status(401).send("Invalid password");
+
+    const token = user.generateAuthToken();
+
+    const userData = { username: user.username, email: user.email, role: user.role };
+    res.send({ userData: userData, token });
   } catch (e) {
     res.status(400).send(e);
   }

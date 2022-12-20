@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;700&display=swap");
 :root {
   --app-background: #181a1b;
+  --secondary-background: #232729;
+  --form-background: #2e3236;
   --dark: #000;
   --light: #fff;
   --secondary: #337fc1;

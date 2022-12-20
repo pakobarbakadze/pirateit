@@ -12,7 +12,6 @@ const Games = () => {
       .then((res) => {
         const data = res.data;
         setGames(res.data);
-        console.log(data);
       })
       .catch((e) => {
         console.log(e);
@@ -21,7 +20,9 @@ const Games = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.cards}>{games ? games.map((game) => <GameCard key={game._id} game={game} />) : <h1>Loading</h1>}</div>
+      <div className={classes.cards}>
+        {games ? games.map((game) => <GameCard key={game._id} game={game} />) : <h1>Loading</h1>}
+      </div>
     </div>
   );
 };

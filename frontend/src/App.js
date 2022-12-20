@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Nav from "./components/NavBar/Nav";
+
+import Nav from "./components/Nav/Nav";
 import BrowsePage from "./pages/BrowsePage";
 
 const App = () => {
