@@ -35,7 +35,7 @@ const Signin = () => {
 
   return (
     <form onSubmit={submitHandler} className={classes.container}>
-      <h1>Log in</h1>
+      <h1>Username</h1>
       <input
         type="text"
         name="email"

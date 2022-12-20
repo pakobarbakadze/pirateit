@@ -10,7 +10,6 @@ const Games = () => {
     axios
       .get("/api/games/getAllGames")
       .then((res) => {
-        const data = res.data;
         setGames(res.data);
       })
       .catch((e) => {
