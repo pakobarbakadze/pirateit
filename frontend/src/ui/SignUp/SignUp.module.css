@@ -1,0 +1,60 @@
+.container {
+  background-image: url("../../assets/background/register.jpg");
+  height: calc(100vh - 72px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+.container * {
+  background-color: var(--secondary-background);
+}
+
+.container form h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.container form input {
+  padding: 15px 10px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 0;
+  background-color: var(--form-background);
+}
+
+.pswd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pswd input {
+  width: 40%;
+}
+
+.error {
+  min-height: 20px;
+  margin: 10px 0;
+}
+
+.error h3 {
+  color: red;
+}
+
+.btn {
+  width: 32%;
+}

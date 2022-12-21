@@ -12,7 +12,7 @@ import classes from "./SignIn.module.css";
 const Signin = () => {
   const [data, setData] = useState({ username: "", password: "" });
   const [isSubmit, setIsSubmit] = useState(false);
-  const [signError, setSignError] = useState("");
+  const [error, setError] = useState("");
 
   const dispatch = useDispatch();
 
@@ -27,10 +27,10 @@ const Signin = () => {
         .post("/api/users/login", { username: data.username, password: data.password })
         .then((res) => {
           dispatch(userActions.setState(res.data));
-          setSignError("");
+          setError("");
         })
         .catch((err) => {
-          setSignError(err.response.data);
+          setError(err.response.data);
         });
     }
     setIsSubmit(false);
@@ -55,8 +55,8 @@ const Signin = () => {
         onChange={(e) => setData({ ...data, password: e.target.value })}
         value={data.password}
       />
-      <div className={`${classes.error} ${!signError ? classes.disabled : ""}`}>
-        <h3>{signError}</h3>
+      <div className={`${classes.error} ${!error ? classes.disabled : ""}`}>
+        <h3>{error}</h3>
       </div>
       <SubmitBtn text={"Sign in"}></SubmitBtn>
       <Link to={{ pathname: "/registration" }}>Sign up</Link>

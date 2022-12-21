@@ -12,10 +12,11 @@
   background-color: var(--dark);
 }
 
-.logo h1 {
+.logo a {
   color: white;
   font-size: 32px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .logo span {

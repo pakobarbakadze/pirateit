@@ -4,6 +4,7 @@ import "./App.css";
 
 import Nav from "./components/Nav/Nav";
 import BrowsePage from "./pages/BrowsePage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<BrowsePage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
       </Routes>
     </div>
   );
