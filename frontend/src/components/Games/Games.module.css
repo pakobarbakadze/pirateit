@@ -1,9 +1,14 @@
 .container {
-    margin: 15px 32px;
+  margin: 15px 32px;
 }
 
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    justify-content: center;
+  }
 }
