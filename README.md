@@ -1,4 +1,4 @@
-# Netflix Clone
+# Pirateit
 
 The gaming website, where admin uploads games, clients can browse them and download for free. 
 
