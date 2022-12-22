@@ -58,8 +58,10 @@ const Signin = () => {
       <div className={`${classes.error} ${!error ? classes.disabled : ""}`}>
         <h3>{error}</h3>
       </div>
-      <SubmitBtn text={"Sign in"}></SubmitBtn>
-      <Link to={{ pathname: "/registration" }}>Sign up</Link>
+      <div className={classes.links}>
+        <SubmitBtn text={"Sign in"}></SubmitBtn>
+        <Link to={{ pathname: "/registration" }}>Sign up</Link>
+      </div>
     </form>
   );
 };

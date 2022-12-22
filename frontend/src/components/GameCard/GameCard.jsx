@@ -8,7 +8,7 @@ const GameCard = ({ game }) => {
     <div className={classes.card}>
       <img src={game.imageLink} alt="game cover" />
       <h1 className={classes.name}>{game.name}</h1>
-      <Link to={{ pathname: "game-details/" + game.name }}>Read more</Link>
+      <Link to={`/details/${game.name}`}>Read more</Link>
     </div>
   );
 };

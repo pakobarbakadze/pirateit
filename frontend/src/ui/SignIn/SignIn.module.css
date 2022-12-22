@@ -5,6 +5,7 @@
   z-index: 1;
   width: 250px;
   padding: 0 20px 20px;
+  border-bottom-left-radius: 10px;
 
   display: flex;
   flex-direction: column;
@@ -33,13 +34,23 @@
   background-color: var(--form-background) !important;
 }
 
-.container a {
-  text-decoration: none;
-  margin: 20px 0 0;
-  font-size: 1.1rem;
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
 }
 
-.container a:hover {
+.links button {
+  width: 100px;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin: auto 0;
+}
+
+.links a:hover {
   color: var(--secondary);
 }
 

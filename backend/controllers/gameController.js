@@ -18,8 +18,8 @@ const uploadGame = async (req, res) => {
 // @route GET /api/games/getGame
 // @acces Public
 const getGame = async (req, res) => {
+  const name = req.query.name;
   try {
-    const name = req.body.name;
     const game = await Game.findOne({ name: name });
     res.status(200).send({ game });
   } catch (e) {

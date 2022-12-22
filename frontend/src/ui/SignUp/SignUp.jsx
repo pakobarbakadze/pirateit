@@ -55,9 +55,7 @@ const SignUp = () => {
         <div className={`${classes.error} ${!error ? classes.disabled : ""}`}>
           <h3>{error}</h3>
         </div>
-        <div className={classes.btn}>
-          <SubmitBtn text={"Sign up"} />
-        </div>
+        <SubmitBtn text={"Sign up"} />
       </form>
     </div>
   );

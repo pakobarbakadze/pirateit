@@ -1,10 +1,10 @@
 .card {
-  flex: 0 1 calc(25% - 20px);
+  flex: 0 1 calc(25% - 30px);
   box-sizing: border-box;
   aspect-ratio: 16/9;
   position: relative;
   cursor: pointer;
-  margin: 1rem 10px;
+  margin: 1rem 15px;
 }
 
 .card img {
@@ -51,7 +51,7 @@
 
 @media screen and (max-width: 1024px) {
   .card {
-    flex: 0 1 calc(50% - 1rem);
+    flex: 0 1 calc(50% - 30px);
   }
 }
 
